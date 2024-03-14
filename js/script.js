@@ -1,6 +1,10 @@
 const btnPlay = document.querySelector(".btnPlay");
 const mostrarNivel = document.querySelector(".mostrarNivel");
 
+const contenedorBotones = document.querySelector(".contenedorBotones");
+const juegoFin = document.querySelector(".juegoFinalizado");
+juegoFin.classList.add("desaparece");
+
 const btnRed = document.querySelector("#red");
 const btnOrange = document.querySelector("#orange");
 const btnGreen = document.querySelector("#green");
@@ -64,8 +68,16 @@ function buttonPressed(e){
                 maquinaEligeColor();
             }
         }else{
-            state='game-over';
-            location.reload();
+            estado='game-over';
+            juegoFinalizado();
         }
     }   
+}
+
+
+function juegoFinalizado(){
+    console.log("fionalizado");
+    contenedorBotones.classList.add("desaparece");
+    juegoFin.classList.remove("desaparece");
+
 }
